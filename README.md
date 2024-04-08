@@ -10,25 +10,25 @@ $ cd question1
 
 - Em seguida, rode
 
-´´´{bash}
+```{bash}
 $ docker compose up -d
-´´´
+```
 
 - Entre na pasta Frontend
-´´´{bash}
+```{bash}
 $ cd frontend
-´´´
+```
 
 - E rode
-´´´{bash}
+```{bash}
 $ python -m http.server
-´´´
+```
 
 ## Para rodar o Question 2
 
 - Entre na pasta
 
-´´´{bash}
+```{bash}
 $ pip install -r requirements.txt
 $ streamlit run main.py
-´´´
+```

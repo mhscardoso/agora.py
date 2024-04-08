@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Network</title>
+        
+        <script
+            type="text/javascript"
+            src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+        ></script>
+
+        <script
+            type="text/javascript"
+            src="index.js"
+        ></script>
+
+        <style type="text/css">
+            html {
+                font-family: 'Roboto';
+                font-size: 15pt;
+            }
+
+            #mynetwork {
+                width: 75%;
+                height: 90vh;
+                border: 1px solid lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <h4 style="margin-bottom: 10pt;">Informations Graph</h4>
+
+        <div style="display: flex;">
+            <div id="mynetwork"></div>
+
+            <div style="margin-left: 10pt; display: inline;">
+                <p style="margin-top: 0pt;">Create a new node in graph</p>
+                
+                <form style="margin-top: 5pt;" id="my-form">
+                    <input style="width: 20vw; height: 4vh; border-radius: 10pt; border-width: 0pt;" type="text" id="name" placeholder="Name">
+
+                    <input style="width: 20vw; height: 4vh; border-radius: 10pt; border-width: 0pt;" type="text" id="description" placeholder="Description">
+                    <input style="margin-top: 10pt;" type="submit" id="done">
+                </form>
+
+                <div id='list'>
+                    <p>Neighbours:</p>
+
+                    <script type="text/javascript">
+                        renderData();
+                    </script>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

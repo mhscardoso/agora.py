@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: project_db
+    image: postgres
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    environment:
+      POSTGRES_PASSWORD: "postsql"
+    ports:
+      - "5432:5432"
+
+  api:
+    container_name: project_api
+    image: graph/api
+    build:
+      dockerfile: ./api/Dockerfile
+    environment:
+      SQLALCHEMY_DATABASE_URL: "postgresql://postgres:postsql@project_db:5432/postgres"
+    ports:
+      - "7777:7777"
+    depends_on:
+      - postgres
